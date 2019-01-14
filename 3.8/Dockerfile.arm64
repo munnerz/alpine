@@ -5,7 +5,7 @@ FROM arm64v8/alpine:3.8
 # We then remove this file after running apk.
 # Projects using this image should 'flatten' the image in order to
 # remove the layer containing qemu-arm-static.
-COPY qemu-arm-static /usr/bin
+COPY qemu-aarch64-static /usr/bin
 
 RUN apk add --no-cache ca-certificates
 
