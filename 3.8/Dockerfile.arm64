@@ -1,3 +1,12 @@
 FROM arm64v8/alpine:3.8
 
+# Copy in qemu-arm-static so we can run this build on Dockerhub's
+# amd64 builders.
+# We then remove this file after running apk.
+# Projects using this image should 'flatten' the image in order to
+# remove the layer containing qemu-arm-static.
+COPY qemu-arm-static /usr/bin
+
 RUN apk add --no-cache ca-certificates
+
+RUN rm -f /usr/bin/qemu-arm-static
