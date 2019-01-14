@@ -1,6 +1,6 @@
 FROM arm64v8/alpine:3.8
 
-# Copy in qemu-arm-static so we can run this build on Dockerhub's
+# Copy in qemu-aarch64-static so we can run this build on Dockerhub's
 # amd64 builders.
 # We then remove this file after running apk.
 # Projects using this image should 'flatten' the image in order to
