@@ -9,4 +9,10 @@ qemu-3.0.0+resin-arm/qemu-arm-static "$DOCKERFILE_DIR"
 # current one, but also remove all registered binfmt_misc before
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
+echo "DOCKERFILE_PATH: $DOCKERFILE_PATH"
+echo "DOCKERFILE_DIR: $DOCKERFILE_DIR"
+ls -lah $DOCKERFILE_PATH
+ls -lah $DOCKERFILE_DIR
+echo "PWD: $PWD"
+
 docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME $DOCKERFILE_DIR
