@@ -9,4 +9,4 @@ COPY qemu-aarch64-static /usr/bin
 
 RUN apk add --no-cache ca-certificates
 
-RUN rm -f /usr/bin/qemu-arm-static
+RUN rm -f /usr/bin/qemu-aarch64-static
